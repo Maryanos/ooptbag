@@ -8,14 +8,31 @@ ballroom = Room("Ballroom")
 ballroom.set_description("A vast room with a shiny wooden floor")
 dining_hall = Room("Dining hall")
 dining_hall.set_description("A large room with ornate golden decorations")
-
+gaming_room = Room("Gaming Room")
+gaming_room.set_description("Room full of exciting techy stuff")
+bar = Room("Bar")
+bar.set_description("Relaxing area but watch out don't trust anyone here")
+beer_garden = Room("Beer garden")
+beer_garden.set_description("Garden area full of drunked people, wait are they drunk or ....?")
+main_garden = Room("Main garden")
+main_garden.set_description("The biggest and most beautifull garden you have ever seen in your life... ")
 
 # Linking the rooms
 kitchen.link_room(dining_hall, "south")
 dining_hall.link_room(kitchen, "north")
 dining_hall.link_room(ballroom, "west")
+dining_hall.link_room(bar, "south")
 ballroom.link_room(dining_hall, "east")
-
+ballroom.link_room(gaming_room, "south")
+gaming_room.link_room(ballroom, "north")
+gaming_room.link_room(main_garden, "south")
+gaming_room.link_room(bar, "east")
+bar.link_room(dining_hall, "north")
+bar.link_room(gaming_room, "west")
+bar.link_room(beer_garden, "east")
+bar.link_room(main_garden, "south")
+main_garden.link_room(gaming_room, "north")
+beer_garden.link_room(bar, "west")
 
 #Creating a new character Dave from the Enemy child class
 dave = Enemy("Dave", "A smelly zombie\n")
@@ -50,24 +67,5 @@ while True:
         print("\n")
         anne.describe()
         anne.talk()
-
-
-
-
-# Rooms Plan        #####################
-                    #                   #
-         #N         #                   #
-      #W     #E     #     Kitchen       #
-         #S         #                   #
-                    #                   #
-##############################  #########
-#                   #                   #
-#                   #                   #
-#     Ballroom      #    Dining Hall    #
-#                                       #
-#                   #                   #
-#########################################
-
-
 
 
