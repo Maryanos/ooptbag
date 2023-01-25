@@ -32,6 +32,7 @@ bar.link_room(gaming_room, "west")
 bar.link_room(beer_garden, "east")
 bar.link_room(main_garden, "south")
 main_garden.link_room(gaming_room, "north")
+main_garden.link_room(beer_garden, "east")
 beer_garden.link_room(bar, "west")
 
 #Creating a new character Dave from the Enemy child class
