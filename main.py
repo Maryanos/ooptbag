@@ -1,6 +1,7 @@
 from room import Room
 from character import Enemy
 
+
 # Setting room names and descriptions
 kitchen = Room("Kitchen")
 kitchen.set_description("A dank and dirty room buzzing with flies")
@@ -16,6 +17,9 @@ beer_garden = Room("Beer garden")
 beer_garden.set_description("Garden area full of drunked people, wait are they drunk or ....?")
 main_garden = Room("Main garden")
 main_garden.set_description("The biggest and most beautifull garden you have ever seen in your life... ")
+hunting_area = Room("Hunting area")
+hunting_area.set_description("The sounds of hunting rifles are heard very clocely... Not a safe place to be!")
+
 
 # Linking the rooms
 kitchen.link_room(dining_hall, "south")
@@ -25,15 +29,18 @@ dining_hall.link_room(bar, "south")
 ballroom.link_room(dining_hall, "east")
 ballroom.link_room(gaming_room, "south")
 gaming_room.link_room(ballroom, "north")
-gaming_room.link_room(main_garden, "south")
 gaming_room.link_room(bar, "east")
 bar.link_room(dining_hall, "north")
 bar.link_room(gaming_room, "west")
 bar.link_room(beer_garden, "east")
 bar.link_room(main_garden, "south")
 main_garden.link_room(gaming_room, "north")
-main_garden.link_room(beer_garden, "east")
+main_garden.link_room(hunting_area, "east")
 beer_garden.link_room(bar, "west")
+beer_garden.link_room(hunting_area, "south")
+hunting_area.link_room(main_garden, "west")
+hunting_area.link_room(beer_garden, "north")
+
 
 #Creating a new character Dave from the Enemy child class
 dave = Enemy("Dave", "A smelly zombie\n")
