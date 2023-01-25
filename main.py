@@ -42,13 +42,11 @@ hunting_area.link_room(main_garden, "west")
 hunting_area.link_room(beer_garden, "north")
 
 
-#Creating a new character Dave from the Enemy child class
+#Creating a new characters from the Enemy child class
 dave = Enemy("Dave", "A smelly zombie\n")
 dave.set_conversation("Hello! I'm Dave, I'm not a zombie, I swear to God!")
 dave.set_weakness("cheese")
 
-
-#Creating a new character Dave from the Enemy child class
 anne = Enemy("Anne", "Not the most friendly person...\n")
 anne.set_conversation(None)
 anne.set_weakness("None")
